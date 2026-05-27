@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Додати коментар</title>
+    <style>
+        .field { margin-bottom: 16px; }
+        .field-error { color: red; font-size: 12px; display: block; margin-top: 4px;}
+        textarea { width: 300px; padding: 8px; box-sizing: border-box; }
+        textarea.error { border: 2px solid red; }
+        textarea.valid { border: 2px solid green; }
+        #serverErrors p { color: red; }
+        #submitBtn:disabled { opacity: 0.5; cursor: not-allowed; }
+    </style>
+</head>
+<body>
+    <h1>Додати коментар до задачі</h1>
+    <div id="serverErrors"></div>
+    <form id="commentForm" novalidate>
+        <div class="field">
+            <label for="text">Ваш коментар:</label><br>
+            <textarea id="text" rows="4" placeholder="Мінімум 2 символи" required></textarea>
+            <span class="field-error" id="textError"></span>
+        </div>
+        <button type="submit" id="submitBtn" disabled>Надіслати</button>
+    </form>
+    <br>
+    <a href="/index.html">На головну</a>
+
+    <script src="/js/validation.js"></script>
+    <script src="/js/comment.js"></script>
+</body>
+</html>

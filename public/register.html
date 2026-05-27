@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Реєстрація</title>
+    <style>
+        .field { margin-bottom: 16px; }
+        input { display: block; width: 300px; padding: 8px; box-sizing: border-box; }
+        input.error { border: 2px solid red; }
+        input.valid { border: 2px solid green; }
+        .field-error { color: red; font-size: 12px; min-height: 16px; display: block; margin-top: 4px; }
+        #submitBtn:disabled { opacity: 0.5; cursor: not-allowed; }
+        #serverErrors p { color: red; margin: 5px 0; }
+    </style>
+</head>
+<body>
+    <h1>Реєстрація</h1>
+    <div id="serverErrors"></div>
+    <form id="registerForm" novalidate>
+        <div class="field">
+            <input type="text" id="name" placeholder="Ім'я" required>
+            <span class="field-error" id="nameError"></span>
+        </div>
+        <div class="field">
+            <input type="email" id="email" placeholder="Email" required>
+            <span class="field-error" id="emailError"></span>
+        </div>
+        <div class="field">
+            <input type="password" id="password" placeholder="Пароль (мін. 8 символів)" required>
+            <span class="field-error" id="passwordError"></span>
+        </div>
+        <div class="field">
+            <input type="password" id="confirmPassword" placeholder="Підтвердіть пароль" required>
+            <span class="field-error" id="confirmError"></span>
+        </div>
+        <button type="submit" id="submitBtn" disabled>Зареєструватися</button>
+    </form>
+    <br>
+    <a href="/index.html">На головну</a>
+
+    <script src="/js/validation.js"></script>
+    <script src="/js/register.js"></script>
+</body>
+</html>
