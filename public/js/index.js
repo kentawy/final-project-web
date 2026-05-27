@@ -1,9 +1,6 @@
-// Визначаємо поточний URL
-const API_URL = window.location.origin;
-
 async function loadTasks() {
     try {
-        const response = await fetch(`${API_URL}/api/tasks`, {
+        const response = await fetch('/api/tasks', { // ВИДАЛЕНО АБСОЛЮТНИЙ URL
             credentials: 'include'
         });
         const data = await response.json();
@@ -33,7 +30,7 @@ async function loadTasks() {
 
 document.getElementById('logoutBtn').addEventListener('click', async () => {
     try {
-        await fetch(`${API_URL}/api/auth/logout`, {
+        await fetch('/api/auth/logout', { // ВИДАЛЕНО АБСОЛЮТНИЙ URL
             method: 'POST',
             credentials: 'include'
         });

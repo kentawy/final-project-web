@@ -1,6 +1,3 @@
-// Визначаємо поточний URL
-const API_URL = window.location.origin;
-
 const nameInput = document.getElementById('name');
 const emailInput = document.getElementById('email');
 const passwordInput = document.getElementById('password');
@@ -75,7 +72,7 @@ document.getElementById('registerForm').addEventListener('submit', async (e) => 
     document.getElementById('serverErrors').innerHTML = '';
 
     try {
-        const response = await fetch(`${API_URL}/api/auth/register`, {
+        const response = await fetch('/api/auth/register', { // ВИДАЛЕНО АБСОЛЮТНИЙ URL
             method: 'POST',
             credentials: 'include',
             headers: { 'Content-Type': 'application/json' },

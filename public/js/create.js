@@ -1,6 +1,3 @@
-// Визначаємо поточний URL
-const API_URL = window.location.origin;
-
 document.getElementById('createForm').addEventListener('submit', async (e) => {
     e.preventDefault();
 
@@ -13,7 +10,7 @@ document.getElementById('createForm').addEventListener('submit', async (e) => {
     };
 
     try {
-        const response = await fetch(`${API_URL}/api/tasks`, {
+        const response = await fetch('/api/tasks', { // ВИДАЛЕНО АБСОЛЮТНИЙ URL
             method: 'POST',
             credentials: 'include',
             headers: {

@@ -1,6 +1,3 @@
-// Визначаємо поточний URL
-const API_URL = window.location.origin;
-
 document.getElementById('loginForm').addEventListener('submit', async (e) => {
     e.preventDefault();
 
@@ -10,7 +7,7 @@ document.getElementById('loginForm').addEventListener('submit', async (e) => {
     };
 
     try {
-        const response = await fetch(`${API_URL}/api/auth/login`, {
+        const response = await fetch('/api/auth/login', { // ВИДАЛЕНО АБСОЛЮТНИЙ URL
             method: 'POST',
             credentials: 'include',
             headers: { 'Content-Type': 'application/json' },

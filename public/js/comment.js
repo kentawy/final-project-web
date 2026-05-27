@@ -1,5 +1,3 @@
-const API_URL = 'http://localhost:3000';
-
 const params = new URLSearchParams(window.location.search);
 const taskId = params.get('taskId');
 
@@ -36,7 +34,7 @@ document.getElementById('commentForm').addEventListener('submit', async (e) => {
     document.getElementById('serverErrors').innerHTML = '';
 
     try {
-        const response = await fetch(`${API_URL}/api/tasks/${taskId}/comments`, {
+        const response = await fetch(`/api/tasks/${taskId}/comments`, { // ВИДАЛЕНО АБСОЛЮТНИЙ URL
             method: 'POST',
             credentials: 'include',
             headers: { 'Content-Type': 'application/json' },
