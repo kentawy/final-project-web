@@ -1,4 +1,5 @@
-const API_URL = 'http://localhost:3000';
+// Визначаємо поточний URL
+const API_URL = window.location.origin;
 
 const nameInput = document.getElementById('name');
 const emailInput = document.getElementById('email');
